@@ -1,51 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,900");
 
-@media print {
-  * {
-    visibility: hidden !important;
-    position: relative;
-    font-size: 25px;
-    color: rgb(9, 65, 128) !important;
-  }
-
-  #taab-4 {
-    position: absolute !important;
-    margin-top: 100px !important;
-    border: 3px solid red;
-  }
-
-  .user-info{
-    margin-bottom: 100px !important;
-  }
-
-  .print{
-    height: 800px !important;
-  }
-
-  #taab-4 *{
-    visibility: visible !important;
-    
-  }
-
-  .user-info,.card{
-    text-align: center !important;
-    width: 600px !important;
-  }
-  .card{
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-
-  img{
-    width: 200px !important;
-  }
-
-  #bbtn{
-    display: none !important;
-  }
-}
-
 body .progress_inner #step-1:checked + input + input + input + input + div + div + div + div > .box_base, body .progress_inner #step-5:checked + div + div + div + div > .box_base, body .progress_inner #step-4:checked + input + div + div + div + div > .box_base, body .progress_inner #step-3:checked + input + input + div + div + div + div > .box_base, body .progress_inner #step-2:checked + input + input + input + div + div + div + div > .box_base {
   top: 50%;
   left: 0px;
@@ -429,7 +383,7 @@ body .progress_inner input[type=radio] {
 }
 
 .toggled {
-  background-color: #3da01f !important; /* Green color when toggled */
+  background-color: #3da01f !important;
 }
 
 

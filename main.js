@@ -37,64 +37,78 @@ let count2 = 0
 let prix1 = 0;
 let prix2 = 0;
 let place = document.getElementById("place")
+ 
+function ajouter(event) {
 
-function ajouter(){
-    noom.innerHTML = nom.value
-    eemail.innerHTML = email.value
-    deepart.innerHTML = options1.value
-    arriiver.innerHTML = options2.value
-    daate.innerHTML = datee.value 
+    if (!nom.value || !email.value || !datee.value || !options1.value || !options2.value || options1.value == options2.value) {
+        alert("Vous deverez choisir premierement la gare de depart et d'arrivee et la date");
+        event.preventDefault();
+    } else {
+        noom.innerHTML = nom.value
+        eemail.innerHTML = email.value
+        deepart.innerHTML = options1.value
+        arriiver.innerHTML = options2.value
+        daate.innerHTML = datee.value 
+    }
 }
+
 
 function increment1() {
-    count1 = count1 + 1
-    prix1 = 500 * count1
-    countEl1.innerText = count1
-    prixt1.innerHTML = prix1
-    prixt3.innerHTML = prix1 + prix2
-    prixt4.innerHTML = prix1 + prix2
-    place.innerHTML = count1 + count2
-}
-
-function decrement1() {
-    if(count1 > 0){
-        count1 = count1 -1
+    if(count1 + count2 < 8){
+        count1 = count1 + 1
         prix1 = 500 * count1
         countEl1.innerText = count1
-        prixt1.innerHTML = prix1 
+        prixt1.innerHTML = prix1
         prixt3.innerHTML = prix1 + prix2
         prixt4.innerHTML = prix1 + prix2
         place.innerHTML = count1 + count2
-    }  
+    }
+}
+
+function decrement1() {
+    if(cnt < count1 + count2){
+        if(count1 > 0){
+            count1 = count1 -1
+            prix1 = 500 * count1
+            countEl1.innerText = count1
+            prixt1.innerHTML = prix1 
+            prixt3.innerHTML = prix1 + prix2
+            prixt4.innerHTML = prix1 + prix2
+            place.innerHTML = count1 + count2
+        } 
+    }    
 }
 
 function increment2() {
-    count2 = count2 + 1
-    prix2 = 100 * count2
-    countEl2.innerText = count2
-    prixt2.innerHTML = prix2
-    prixt3.innerHTML = prix1 + prix2
-    prixt4.innerHTML = prix1 + prix2
-    place.innerHTML = count1 + count2
-}
-
-function decrement2() {
-    if(count2 > 0){
-        count2 = count2 -1
+    if(count1 + count2 < 8){
+        count2 = count2 + 1
         prix2 = 100 * count2
         countEl2.innerText = count2
         prixt2.innerHTML = prix2
         prixt3.innerHTML = prix1 + prix2
         prixt4.innerHTML = prix1 + prix2
         place.innerHTML = count1 + count2
-    } 
+    }
+}
+
+function decrement2() {
+    if(cnt < count1 + count2){
+        if(count2 > 0){
+            count2 = count2 -1
+            prix2 = 100 * count2
+            countEl2.innerText = count2
+            prixt2.innerHTML = prix2
+            prixt3.innerHTML = prix1 + prix2
+            prixt4.innerHTML = prix1 + prix2
+            place.innerHTML = count1 + count2
+        } 
+    }
 }
 
 let cnt = 0;
 function toggleColor(event) {
     let button = event.target;
-    if (cnt < count1 + count2) {
-        
+    if (cnt < count1 + count2){  
         if (button.style.backgroundColor === "rgb(166, 205, 226)") {
             cnt++;
             button.style.backgroundColor = "#3da01f";
@@ -110,5 +124,45 @@ function toggleColor(event) {
     }
 }
 
+let tchek = 0;
 
+function voyage(event) {
+    let div = event.currentTarget;
+    if (tchek == 0) {
+        if (div.style.backgroundColor === "") {
+            div.style.backgroundColor = "#3da01f"; 
+            tchek = 1;
+        }
+    } else {
+        if (tchek == 1) {
+            if (div.style.backgroundColor === "rgb(61, 160, 31)") {
+                div.style.backgroundColor = "";
+                tchek = 0;
+            } else {
+                let selectedDiv = document.querySelector('div[style*="background-color: rgb(61, 160, 31)"]');
+                if (selectedDiv) {
+                    selectedDiv.style.backgroundColor = "";
+                }
+                div.style.backgroundColor = "#3da01f";
+            }
+        }
+    }
+}
 
+function imp() {
+        const today = new Date();
+        console.log(today); 
+    const btnImp = document.getElementById("btnImp");
+    btnImp.style.display = "none";
+    const ticketSection = document.getElementById("user_info");
+    const options = {
+      margin: 20,
+      filename: 'Flight_Tickets.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+    html2pdf().set(options).from(ticketSection).save().then(() => {
+        btnImp.style.display = "flex";
+    });
+}

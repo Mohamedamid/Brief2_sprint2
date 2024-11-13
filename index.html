@@ -65,29 +65,29 @@
               <input type="date" id="datee" style="margin-top: 10px; padding: 15px 20px; width: 400px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;"/>
               <div style="display: flex;justify-content: space-between; padding: 15px 20px; width: 440px; text-align: center;">
                 <label for='step-1' style="margin-top: 10px; padding: 15px 20px; width: 100px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">Back</label>
-                <label for='step-3' onclick="ajouter()" style="margin-top: 10px; padding: 15px 20px; width: 100px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">Next</label>
+                <label for='step-3' id="bbbtn" onclick="ajouter(event)" style="margin-top: 10px; padding: 15px 20px; width: 100px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">Next</label>
               </div>
             </div>
             <div class='tab tab-2' style="display: flex; flex-direction: column; justify-content: center ;align-items: center;">
               <h1>Les resultat de recherche</h1>
               <div style="display: flex; flex-direction: column; width: 600px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+                <div onclick="voyage(event)" id="voyage1" style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
                   <span>voyage 1</span>
-                  <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
+                  <img height="50px" src="Lufthansa-Logo.jpg" alt="">
                     <span>6:30</span>
                   <img width="50px" src="./airplane.png" alt="">
                     <span>8:45</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+                <div onclick="voyage(event)" id="voyage2" style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
                   <span>voyage 2</span>  
-                  <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
+                  <img height="50px" src="Lufthansa-Logo.jpg" alt="">
                     <span>6:30</span>
                     <img width="50px" src="./airplane.png" alt="">
                     <span>8:45</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+                <div onclick="voyage(event)" id="voyage3" style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
                   <span>voyage 3</span>  
-                  <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
+                  <img height="50px" src="Lufthansa-Logo.jpg" alt="">
                     <span>6:30</span>
                     <img width="50px" src="./airplane.png" alt="">
                     <span>8:45</span>
@@ -141,8 +141,8 @@
             </div>
             <div class='tab tab-4' id="taab-4">
               <h1>Les tickets</h1> 
-              <div class="print" style="height: 600px;display: flex; justify-content: center; align-items: center;flex-direction: column;">
-              <div class="card content">
+              <div class="print" id="user_info" style="height: 600px;display: flex; justify-content: center; align-items: center;flex-direction: column;">
+              <div class="card content" >
                 <div class="user-info">
                   <p>Nom et prénom : <span id="noom">------</span></p>
                   <p>E-mail : <span id="eemail">------</span></p>
@@ -157,9 +157,9 @@
                   <img src="qr-code.svg" alt="code QR"/>
                 </div>
               </div>
-              <div style="display: flex;justify-content: space-between; padding: 15px 20px; width: 440px; text-align: center;">
+              <div id="btnImp" style="display: flex;justify-content: space-between; padding: 15px 20px; width: 440px; text-align: center;">
                 <label id="bbtn" for='step-4' style="margin-top: 10px; padding: 15px 20px; width: 100px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">Back</label>
-                <label id="bbtn" onclick="window.print()" style="margin-top: 10px; padding: 15px 20px; width: 150px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">imprimer</label>
+                <button id="download-btn" onclick="imp()" style="margin-top: 10px; padding: 15px 20px; width: 150px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e;background-color: white; font-weight: 700; font-size: 13pt;">imprimer</button>
               </div>
               </div>
             </div>
@@ -168,4 +168,5 @@
       </div>    
 </body>
 <script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 </html>
