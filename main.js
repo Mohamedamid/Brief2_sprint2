@@ -52,7 +52,6 @@ function ajouter(event) {
     }
 }
 
-
 function increment1() {
     if(count1 + count2 < 8){
         count1 = count1 + 1

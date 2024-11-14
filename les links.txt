@@ -1,0 +1,5 @@
+git : https://github.com/Mohamedamid/Brief2_sprint2.git
+gitpage : https://mohamedamid.github.io/Brief2_sprint2/
+figma : https://www.figma.com/design/wCZypmA3mYkLULPkqf4PHy/Untitled?node-id=0-1&t=aW8CJQZP7OhywyXQ-1
+jira : https://amidmohamed2024.atlassian.net/jira/software/projects/BS2/boards/2/timeline?shared=&atlOrigin=eyJpIjoiYzAyZjgxZTk0MGIzNGVmMmI1NTQyMWJiOGYyYmFiYTUiLCJwIjoiaiJ9
+canva : https://www.canva.com/design/DAGWV-Xg0es/J9VDMa7cuoZgw__Vq1eHBw/edit?utm_content=DAGWV-Xg0es&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
